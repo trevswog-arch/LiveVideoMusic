@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Performance Rankings</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+            --accent-color: #8b5cf6; 
+            --secondary-accent: #06b6d4;
+            --rank-gold: #fbbf24;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            background: linear-gradient(to right, var(--accent-color), var(--secondary-accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: var(--text-dim);
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .rank-card {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 3rem;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .rank-number {
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: var(--accent-color);
+            color: white;
+            width: 50px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 85%, 0% 100%);
+            z-index: 10;
+        }
+
+        .rank-card:nth-child(1) .rank-number {
+            background: var(--rank-gold);
+            color: #000;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            background: #000;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .performance-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .artist-name {
+            color: var(--secondary-accent);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .description {
+            color: var(--text-dim);
+            font-size: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 1rem;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Live Legends</h1>
+        <p>My personal top 3</p>
+    </header>
+
+    <div class="container">
+
+        <article class="rank-card">
+            <div class="rank-number">1</div>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/rwUTixsTv6Y" allowfullscreen></iframe>
+            </div>
+            <div class="card-content">
+                <span class="artist-name">Silver Jews</span>
+                <h2 class="performance-title">Smith & Jones Forever (Live)</h2>
+                <p class="description">Silver Jews is my favorite band, though didn't do many live performances during their run, so this is a special video.</p>
+            </div>
+        </article>
+
+        <article class="rank-card">
+            <div class="rank-number">2</div>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/TaBgZnScmY4" allowfullscreen></iframe>
+            </div>
+            <div class="card-content">
+                <span class="artist-name">King Krule</span>
+                <h2 class="performance-title">Out Getting Ribs (Live)</h2>
+                <p class="description">This is my favorite king krule live video, lots of raw emotion.</p>
+            </div>
+        </article>
+
+        <article class="rank-card">
+            <div class="rank-number">3</div>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/rRH-Q4Y5Z6k" allowfullscreen></iframe>
+            </div>
+            <div class="card-content">
+                <span class="artist-name">MIKE</span>
+                <h2 class="performance-title">Tiny Desk (Home) Concert</h2>
+                <p class="description">Mike is my personal favorite rapper, in this tiny desk he uses a live band to play super short sample based rap songs which makes it a very interesting performance.</p>
+            </div>
+        </article>
+
+    </div>
+
+</body>
+</html>
